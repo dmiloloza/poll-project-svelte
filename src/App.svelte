@@ -20,6 +20,12 @@
     {:else if activeItem === 'Add New Poll'}
     <CreatePollForm/>
     {/if}
+    <Tabs {activeItem} {items} on:tabChange={tabChange}/>
+    {#if activeItem === 'Current Polls'}
+        <p>Poll list component goes here</p>
+    {:else if activeItem === 'Add New Poll'}
+        <CreatePollForm/>
+    {/if}
 </main>
 <Footer/>
 

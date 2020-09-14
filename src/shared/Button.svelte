@@ -34,6 +34,6 @@
     }
     .secondary.inverse{
         color: #45c496;
-        background: white;
+        background: white000000000000000000000000000000000000000;
     }
 </style>
