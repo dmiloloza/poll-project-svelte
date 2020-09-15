@@ -24,7 +24,7 @@
         <label for="answer-b">Answer B:</label>
         <input bind:value={fields.answerB} id="answer-b" type="text">
     </div>
-    <Button type="secondary" flat="true">Add Poll</Button>
+    <Button type="primary" flat={true} inverse={false}>Add Poll</Button>
 </form>
 
 
@@ -34,7 +34,6 @@
         margin: 0 auto;
         text-align: center;
     }
-
     .form-field {
         margin: 1em auto;
     }
