@@ -14,11 +14,11 @@
     let polls = [
         {
             id: 1,
-            question: 'Python or JS',
+            question: 'Python or JS?',
             answerA: 'Python',
             answerB: 'JS',
-            voteA: 9,
-            voteB: 15,
+            votesA: 9,
+            votesB: 15,
         },
     ];
 
