@@ -2,7 +2,6 @@
     import {createEventDispatcher} from 'svelte'
     const dispatch = createEventDispatcher()
 
-
     //we need to export variables which we are accepted as property
     export let items;
     export let activeItem;
