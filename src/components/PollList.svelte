@@ -7,7 +7,9 @@
 <div class="poll-list">
     {#each polls as poll (poll.id) }
         <div>
-            <PollDetails {poll}/>
+            <!--'vote' - name of event-->
+            <!--custom event forwarding to the parent.Handler is not assigned-->
+            <PollDetails {poll} on:vote/>
         </div>
     {/each}
 </div>
