@@ -44,7 +44,6 @@
 
        polls = copiedPolls;
     };
-
 </script>
 
 
