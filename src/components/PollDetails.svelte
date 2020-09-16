@@ -1,15 +1,18 @@
 <script>
     import {createEventDispatcher} from 'svelte'
+
     const dispatch = createEventDispatcher();
 
     import Card from "../shared/Card.svelte";
+
     export let poll;
 
     //reactive values
     $: totalVotes = poll.votesA + poll.votesB;
+    $: percentA = Math.floor(100 / totalVotes * poll.votesA)
+    $: percentB = Math.floor(100 / totalVotes * poll.votesB)
 
     //handling votes
-
     //(option, id) => value
     const handleVote = (option, id) => {
         //option: option , id:id => property. 'vote' name of event
@@ -24,11 +27,11 @@
         </h3>
         <p>Total votes: {totalVotes}</p>
         <div class="answer" on:click={() => handleVote('a', poll.id)}>
-            <div class="percent percent-a"></div>
+            <div class="percent percent-a" style="width: {percentA}%"></div>
             <span>{poll.answerA} ({poll.votesA})</span>
         </div>
         <div class="answer" on:click={() => handleVote('b', poll.id)}>
-            <div class="percent percent-b"></div>
+            <div class="percent percent-b" style="width: {percentB}%"></div>
             <span>{poll.answerB} ({poll.votesB})</span>
         </div>
     </div>
@@ -63,4 +66,23 @@
         display: inline-block;
         padding: 1em 2em;
     }
+
+    .percent {
+        height: 100%;
+        position: absolute;
+        box-sizing: border-box;
+    }
+
+    .percent-a {
+        border-left: 4px solid #d91b42;
+        background: rgba(217, 27, 66, 0.2);
+
+    }
+
+    .percent-b {
+        border-left: #45c496 4px solid;
+        background: rgba(69, 196, 150, 0.2);
+    }
 </style>
+
+
