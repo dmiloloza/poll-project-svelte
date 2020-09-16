@@ -27,11 +27,11 @@
         </h3>
         <p>Total votes: {totalVotes}</p>
         <div class="answer" on:click={() => handleVote('a', poll.id)}>
-            <div class="percent percent-a" style="width: {percentA}%">{percentA}%</div>
+            <div class="percent percent-a" style="width: {percentA}%"></div>
             <span>{poll.answerA} ({poll.votesA})</span>
         </div>
         <div class="answer" on:click={() => handleVote('b', poll.id)}>
-            <div class="percent percent-b" style="width: {percentB}%">{percentB}%</div>
+            <div class="percent percent-b" style="width: {percentB}%"></div>
             <span>{poll.answerB} ({poll.votesB})</span>
         </div>
     </div>
