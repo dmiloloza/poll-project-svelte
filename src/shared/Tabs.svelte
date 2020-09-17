@@ -28,7 +28,8 @@
         padding: 0;
         list-style-type: none;
     }
-    li{
+
+    li {
         margin: 0 1em;
         font-size: 18px;
         color: #555;
