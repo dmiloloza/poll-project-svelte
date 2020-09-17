@@ -78,7 +78,7 @@
         <input bind:value={fields.answerB} id="answer-b" type="text">
         <div class="error">{errors.answerB}</div>
     </div>
-    <Button flat={true} inverse={false} type="primary">Add Poll</Button>
+    <Button flat={true} inverse={false} type="secondary">Add Poll</Button>
 </form>
 
 
