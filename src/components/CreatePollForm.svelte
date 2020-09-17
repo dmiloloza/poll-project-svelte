@@ -1,4 +1,5 @@
 <script>
+    import PollStore from '../stores/PollStore';
     import {createEventDispatcher} from 'svelte';
     import Button from "../shared/Button.svelte";
 
@@ -51,7 +52,11 @@
                 votesB: 0,
                 id: Math.random()
             };
-            dispatch('add', poll) // add is event. poll is object we send with event
+            // save poll to store
+            PollStore.update(currentPolls => {
+                return [poll,...currentPolls] //return a value that is contained within the store
+            })
+            dispatch('add');
         }
     }
 
