@@ -3,11 +3,11 @@ import {writable} from "svelte/store";
 const PollStore = writable([
     {
         id: 1,
-        question: 'Python or JS?',
-        answerA: 'Python',
-        answerB: 'JS',
-        votesA: 9,
-        votesB: 15,
+        question: 'Premier League champion 20/21?',
+        answerA: 'Liverpool',
+        answerB: 'Man City',
+        votesA: 10,
+        votesB: 8,
     },
 ]);
 

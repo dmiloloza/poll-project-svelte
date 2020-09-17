@@ -1,4 +1,6 @@
 <script>
+    import {fade, slide, scale} from 'svelte/transition';
+    import {flip} from 'svelte/animate'
    // import {onMount, onDestroy} from 'svelte';
     import PollStore from '../stores/PollStore'
     import PollDetails from "./PollDetails.svelte";
@@ -20,7 +22,7 @@ and also it auto unsub. us from the store when component is destroys(switching b
 
 <div class="poll-list">
     {#each $PollStore as poll (poll.id) }
-        <div>
+        <div in:fade out:scale|local animate:flip={{duration: 500}}>
             <!--'vote' - name of event-->
             <!--custom event forwarding to the parent.Handler is not assigned-->
             <PollDetails {poll}/>
