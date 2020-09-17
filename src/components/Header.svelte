@@ -1,19 +1,21 @@
 <header>
     <h1>
-        <img src="./img/logo.svg" alt="Poll logo">
+        <img alt="Poll logo" src="./img/logo.svg">
     </h1>
 </header>
 
 <style>
-    header{
+    header {
         background: #f7f7f7;
         padding: 1em;
     }
-    h1{
+
+    h1 {
         margin: 0;
         text-align: center;
     }
-    img{
+
+    img {
         max-width: 4em;
     }
 </style>

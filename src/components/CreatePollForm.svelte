@@ -15,6 +15,7 @@
         answerA: '',
         answerB: ''
     };
+
     let valid = false;
 
     const submitHandler = () => {
@@ -54,12 +55,11 @@
             };
             // save poll to store
             PollStore.update(currentPolls => {
-                return [poll,...currentPolls] //return a value that is contained within the store
+                return [poll, ...currentPolls] //return a value that is contained within the store
             })
             dispatch('add');
         }
-    }
-
+    };
 </script>
 
 <form on:submit|preventDefault={submitHandler}>
@@ -80,7 +80,6 @@
     </div>
     <Button flat={true} inverse={false} type="secondary">Add Poll</Button>
 </form>
-
 
 <style>
     form {
