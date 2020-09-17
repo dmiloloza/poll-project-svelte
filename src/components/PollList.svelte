@@ -23,7 +23,7 @@ and also it auto unsub. us from the store when component is destroys(switching b
         <div>
             <!--'vote' - name of event-->
             <!--custom event forwarding to the parent.Handler is not assigned-->
-            <PollDetails {poll} on:vote/>
+            <PollDetails {poll}/>
         </div>
     {/each}
 </div>
