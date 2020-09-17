@@ -1,6 +1,7 @@
 <script>
     import PollStore from '../stores/PollStore'
     import Card from "../shared/Card.svelte";
+    import Button from "../shared/Button.svelte";
 
     export let poll;
 
@@ -17,14 +18,22 @@
             let copiedPolls = [...currentPolls];
             let upvotedPoll = copiedPolls.find((poll) => poll.id == id);
 
-                if (option === 'a') {
-                    upvotedPoll.votesA++;
-                }
-                if (option === 'b') {
-                    upvotedPoll.votesB++;
-                }
+            if (option === 'a') {
+                upvotedPoll.votesA++;
+            }
+            if (option === 'b') {
+                upvotedPoll.votesB++;
+            }
             return copiedPolls;
         });
+    };
+
+    //deleting a  poll
+    const handleDelete = id => {
+        PollStore.update(currentPolls => {
+            //Ako je poll id razlicit od id onda je true i nece ga izbaciti iz arraya.
+            return currentPolls.filter(poll => poll.id != id)
+        })
     };
 </script>
 
@@ -42,6 +51,10 @@
             <div class="percent percent-b" style="width: {percentB}%"></div>
             <span>{poll.answerB} ({poll.votesB})</span>
         </div>
+        <div class="delete">
+            <Button flat={true} on:click={() => handleDelete(poll.id)}>Delete</Button>
+        </div>
+
     </div>
 </Card>
 
@@ -90,6 +103,10 @@
     .percent-b {
         border-left: #45c496 4px solid;
         background: rgba(69, 196, 150, 0.2);
+    }
+    .delete{
+        margin-top: 2em;
+        text-align: center;
     }
 </style>
 
