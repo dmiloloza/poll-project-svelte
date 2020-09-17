@@ -9,8 +9,8 @@
 
     //reactive values
     $: totalVotes = poll.votesA + poll.votesB;
-    $: percentA = Math.floor(100 / totalVotes * poll.votesA)
-    $: percentB = Math.floor(100 / totalVotes * poll.votesB)
+    $: percentA = Math.round(100 / totalVotes * poll.votesA)
+    $: percentB = Math.round(100 / totalVotes * poll.votesB)
 
     //handling votes
     //(option, id) => value
