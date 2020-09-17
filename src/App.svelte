@@ -10,7 +10,6 @@
     let activeItem = 'Current Polls';
     const tabChange = (e) => activeItem = e.detail
 
-
     const handleAdd = (e) => {
         const poll = e.detail;
         polls = [poll, ...polls];

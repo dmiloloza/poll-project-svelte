@@ -14,7 +14,6 @@
     })*/
 </script>
 
-
 <!--$PollStore $ assume that we want to get the data from the Store(Array of polls)-->
 <!--$PollStore $ automatically subscribe us to that data ,
 and also it auto unsub. us from the store when component is destroys(switching between tabs)-->
